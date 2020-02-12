@@ -1,0 +1,17 @@
+version: "3"
+services:
+  identities-graph:
+    build: identities-graph/
+    ports:
+      - "8080:8080"
+  payments-graph:
+    build: payments-graph/
+    ports:
+      - "8081:8081"
+  gateway:
+    build: gateway/
+    ports:
+      - "4000:4000"
+    depends_on:
+      - "identities-graph"
+      - "payments-graph"
