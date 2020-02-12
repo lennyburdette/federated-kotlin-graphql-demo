@@ -1,0 +1,12 @@
+graphql:
+  federation:
+    enabled: true
+  packages:
+    - "com.example"
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: payments-graph
