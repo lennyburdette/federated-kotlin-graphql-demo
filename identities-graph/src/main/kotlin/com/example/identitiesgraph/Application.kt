@@ -1,5 +1,6 @@
 package com.example.identitiesgraph
 
+import com.apollographql.federation.graphqljava.tracing.FederatedTracingInstrumentation
 import com.example.identitiesgraph.hooks.CustomFederationSchemaGeneratorHooks
 import com.example.identitiesgraph.loaders.LOCATION
 import com.example.identitiesgraph.loaders.MERCHANT
@@ -21,6 +22,9 @@ class Application {
 			MERCHANT to merchantResolver,
 			LOCATION to locationResolver
 	))
+
+	@Bean
+	fun addFederatedTracing() = FederatedTracingInstrumentation()
 }
 
 fun main(args: Array<String>) {

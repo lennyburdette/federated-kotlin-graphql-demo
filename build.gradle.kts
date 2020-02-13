@@ -2,10 +2,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.util.Properties
 
 plugins {
-	id("org.springframework.boot") version "2.2.4.RELEASE"
-	id("io.spring.dependency-management") version "1.0.9.RELEASE"
 	kotlin("jvm") version "1.3.61"
 	kotlin("plugin.spring") version "1.3.61"
+    id("org.springframework.boot") version "2.2.4.RELEASE"
+	id("io.spring.dependency-management") version "1.0.9.RELEASE"
 }
 
 allprojects {
@@ -34,11 +34,12 @@ subprojects {
     val kotlinVersion: String by project
 
     apply(plugin = "kotlin")
-    apply(plugin = "org.springframework.boot")
 
     dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
-        testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:$kotlinVersion")
+        implementation("org.jetbrains.kotlin:kotlin-reflect")
+        implementation("com.graphql-java:graphql-java-extended-scalars:1.0")
+        implementation("com.apollographql.federation:federation-graphql-java-support:0.3.2")
     }
 
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
@@ -47,19 +48,16 @@ subprojects {
             freeCompilerArgs = listOf("-Xjsr305=strict")
         }
     }
-
-    tasks {
-        jar {
-            enabled = false
-        }
-        test {
-            useJUnitPlatform()
-        }
-    }
 }
 
-tasks {
-    jar {
-        enabled = false
+configure(subprojects.filter { it.name != "graphcommon" }) {
+    apply(plugin = "org.springframework.boot")
+    apply(plugin = "io.spring.dependency-management")
+    apply(plugin = "org.jetbrains.kotlin.plugin.spring")
+
+    dependencies {
+        implementation(project(":graphcommon"))
+        implementation("com.expediagroup:graphql-kotlin-spring-server:1.4.2")
+        implementation("org.springframework.boot:spring-boot-starter:2.2.4.RELEASE")
     }
 }

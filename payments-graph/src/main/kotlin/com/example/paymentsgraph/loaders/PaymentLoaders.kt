@@ -1,7 +1,7 @@
 package com.example.paymentsgraph.loaders
 
+import com.example.graphcommon.types.Money
 import com.example.paymentsgraph.types.CardPaymentDetails
-import com.example.paymentsgraph.types.Money
 import com.example.paymentsgraph.types.Payment
 import com.expediagroup.graphql.federation.execution.FederatedTypeResolver
 import kotlinx.coroutines.future.await

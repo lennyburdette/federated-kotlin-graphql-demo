@@ -1,5 +1,6 @@
 package com.example.paymentsgraph
 
+import com.apollographql.federation.graphqljava.tracing.FederatedTracingInstrumentation
 import com.example.paymentsgraph.hooks.CustomFederationSchemaGeneratorHooks
 import com.example.paymentsgraph.loaders.PAYMENT
 import com.example.paymentsgraph.loaders.paymentResolver
@@ -16,6 +17,9 @@ class Application {
 
 	@Bean
 	fun federatedTypeRegistry() = FederatedTypeRegistry(mapOf(PAYMENT to paymentResolver))
+
+	@Bean
+	fun addFederatedTracing() = FederatedTracingInstrumentation()
 }
 
 fun main(args: Array<String>) {

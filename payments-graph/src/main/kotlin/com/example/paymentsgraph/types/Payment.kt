@@ -1,5 +1,7 @@
 package com.example.paymentsgraph.types
 
+import com.example.graphcommon.types.Address
+import com.example.graphcommon.types.Money
 import com.expediagroup.graphql.annotations.GraphQLID
 import com.expediagroup.graphql.federation.directives.FieldSet
 import com.expediagroup.graphql.federation.directives.KeyDirective

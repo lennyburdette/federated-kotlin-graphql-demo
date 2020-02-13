@@ -1,5 +1,6 @@
 package com.example.identitiesgraph.types
 
+import com.example.graphcommon.types.Address
 import com.example.identitiesgraph.loaders.MERCHANT
 import com.expediagroup.graphql.annotations.GraphQLID
 import com.expediagroup.graphql.federation.directives.FieldSet

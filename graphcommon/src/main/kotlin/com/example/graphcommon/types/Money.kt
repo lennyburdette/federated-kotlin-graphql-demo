@@ -1,4 +1,4 @@
-package com.example.paymentsgraph.types
+package com.example.graphcommon.types
 
 data class Money(
   val amount: Int,
