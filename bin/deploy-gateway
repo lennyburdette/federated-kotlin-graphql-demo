@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -ex
+
+cd $(dirname $(dirname $0))
+
+cd gateway
+heroku container:push web -a young-plains-37812
+heroku container:release web -a young-plains-37812

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -ex
+
+cd $(dirname $(dirname $0))
+
+./gradlew :payments-graph:bootJar
+
+cd payments-graph
+heroku container:push web -a guarded-taiga-23933
+heroku container:release web -a guarded-taiga-23933
