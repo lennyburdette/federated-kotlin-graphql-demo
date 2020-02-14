@@ -1,7 +1,7 @@
 package com.example.paymentsgraph
 
 import com.apollographql.federation.graphqljava.tracing.FederatedTracingInstrumentation
-import com.example.paymentsgraph.hooks.CustomFederationSchemaGeneratorHooks
+import com.example.graphcommon.hooks.CustomFederationSchemaGeneratorHooks
 import com.example.paymentsgraph.loaders.PAYMENT
 import com.example.paymentsgraph.loaders.paymentResolver
 import com.expediagroup.graphql.federation.execution.FederatedTypeRegistry

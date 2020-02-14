@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -ex
+
+cd $(dirname $(dirname $0))
+
+./gradlew :customers-graph:bootJar
+
+cd customers-graph
+heroku container:push web -a shielded-dusk-82707
+heroku container:release web -a shielded-dusk-82707

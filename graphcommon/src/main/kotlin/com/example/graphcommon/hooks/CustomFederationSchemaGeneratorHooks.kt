@@ -1,10 +1,8 @@
-package com.example.paymentsgraph.hooks
+package com.example.graphcommon.hooks
 
 import com.expediagroup.graphql.federation.FederatedSchemaGeneratorHooks
 import com.expediagroup.graphql.federation.execution.FederatedTypeRegistry
 import graphql.scalars.datetime.DateTimeScalar
-import graphql.schema.Coercing
-import graphql.schema.GraphQLScalarType
 import graphql.schema.GraphQLType
 import java.time.OffsetDateTime
 import kotlin.reflect.KType

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+npx apollo service:push \
+  --serviceName=customers-graph \
+  --endpoint=http://localhost:8081/graphql \
+  --serviceURL=https://shielded-dusk-82707.herokuapp.com/graphql
+
+npx apollo service:push \
+  --serviceName=identities-graph \
+  --endpoint=http://localhost:8082/graphql \
+  --serviceURL=https://rocky-falls-17649.herokuapp.com/graphql
+
+npx apollo service:push \
+  --serviceName=payments-graph \
+  --endpoint=http://localhost:8083/graphql \
+  --serviceURL=https://guarded-taiga-23933.herokuapp.com/graphql

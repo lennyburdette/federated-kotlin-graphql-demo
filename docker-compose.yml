@@ -1,25 +1,32 @@
 version: "3"
 services:
-  identities-graph:
-    build: identities-graph/
-    ports:
-      - "8080:8080"
-    environment:
-      - PORT=8080
-  payments-graph:
-    build: payments-graph/
+  customers-graph:
+    build: customers-graph/
     ports:
       - "8081:8081"
     environment:
       - PORT=8081
+  identities-graph:
+    build: identities-graph/
+    ports:
+      - "8082:8082"
+    environment:
+      - PORT=8082
+  payments-graph:
+    build: payments-graph/
+    ports:
+      - "8083:8083"
+    environment:
+      - PORT=8083
   gateway:
     build: gateway/
     ports:
       - "4000:4000"
     environment:
       - PORT=4000
-      - SLEEP=9
-      - SERVICE_LIST=[{"name":"identities-graph","url":"http://identities-graph:8080/graphql"},{"name":"payments-graph","url":"http://payments-graph:8081/graphql"}]
+      - SLEEP=7
+      - SERVICE_LIST=[{"name":"customers-graph","url":"http://customers-graph:8081/graphql"},{"name":"identities-graph","url":"http://identities-graph:8082/graphql"},{"name":"payments-graph","url":"http://payments-graph:8083/graphql"}]
     depends_on:
+      - "customers-graph"
       - "identities-graph"
       - "payments-graph"

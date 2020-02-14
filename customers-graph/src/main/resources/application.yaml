@@ -1,0 +1,9 @@
+graphql:
+  federation:
+    enabled: true
+  packages:
+    - "com.example"
+
+spring:
+  application:
+    name: customers-graph

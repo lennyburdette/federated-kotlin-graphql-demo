@@ -2,6 +2,7 @@
 
 cd $(dirname $(dirname $0))
 
+./gradlew :customers-graph:bootJar
 ./gradlew :identities-graph:bootJar
 ./gradlew :payments-graph:bootJar
 
