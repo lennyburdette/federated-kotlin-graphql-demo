@@ -4,7 +4,10 @@
   "dependencies": {
     "@apollo/gateway": "latest",
     "apollo-server": "latest",
-    "graphql": "latest"
+    "apollo-server-express": "^2.10.1",
+    "express": "^4.17.1",
+    "graphql": "latest",
+    "graphql-voyager": "^1.0.0-rc.29"
   },
   "license": "Apache-2.0",
   "main": "index.js",
