@@ -11,5 +11,5 @@ import org.springframework.stereotype.Component
 @Component
 class LocationQuery : Query {
     fun location(@GraphQLID id: String, env: DataFetchingEnvironment) =
-        env.getDataLoader<String, Location>(LOCATION).load(id)
+        env.getDataLoader<String, Location?>(LOCATION).load(id)
 }

@@ -10,5 +10,5 @@ import org.springframework.stereotype.Component
 @Component
 class MerchantQuery : Query {
     fun merchant(@GraphQLID id: String, env: DataFetchingEnvironment) =
-        env.getDataLoader<String, Merchant>(MERCHANT).load(id)
+        env.getDataLoader<String, Merchant?>(MERCHANT).load(id)
 }
