@@ -1,0 +1,6 @@
+#!/bin/bash -ex
+
+$(dirname $0)/deploy-customers-graph
+$(dirname $0)/deploy-identities-graph
+$(dirname $0)/deploy-payments-graph
+$(dirname $0)/deploy-gateway
