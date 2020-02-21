@@ -1,6 +1,7 @@
 package com.example.paymentsgraph.types
 
 import com.example.paymentsgraph.fixtures.getPaymentsForLocation
+import com.example.paymentsgraph.fixtures.getPaymentsForMerchant
 import com.example.paymentsgraph.loaders.batchFetchPayments
 import com.expediagroup.graphql.annotations.GraphQLID
 import com.expediagroup.graphql.federation.directives.ExtendsDirective
@@ -12,16 +13,16 @@ import kotlinx.coroutines.future.await
 
 @ExtendsDirective
 @KeyDirective(FieldSet("id"))
-data class Location(
+data class Merchant(
   @GraphQLID @ExternalDirective val id: String
 ) {
-  fun payments(first: Int?) = PaymentPaginated(nodes = getPaymentsForLocation(id))
+  fun payments(first: Int?) = PaymentPaginated(nodes = getPaymentsForMerchant(id))
 }
 
-const val LOCATION = "Location"
+const val MERCHANT = "Merchant"
 
-val locationResolver = object : FederatedTypeResolver<Location> {
-  override suspend fun resolve(representations: List<Map<String, Any>>): List<Location?> {
-    return representations.map { it["id"]?.toString()?.let { id -> Location(id) } }
+val merchantResolver = object : FederatedTypeResolver<Merchant> {
+  override suspend fun resolve(representations: List<Map<String, Any>>): List<Merchant?> {
+    return representations.map { it["id"]?.toString()?.let { id -> Merchant(id) } }
   }
 }

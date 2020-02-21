@@ -10,5 +10,6 @@ import java.util.concurrent.CompletableFuture
 
 @Component
 class CustomerQuery : Query {
-  fun customer(@GraphQLID id: String, env: DataFetchingEnvironment) = env.getDataLoader<String, Customer?>(CUSTOMER).load(id)
+  fun customer(@GraphQLID id: String, env: DataFetchingEnvironment) =
+      env.getDataLoader<String, Customer?>(CUSTOMER).load(id)
 }

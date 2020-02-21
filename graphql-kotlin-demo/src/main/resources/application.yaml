@@ -1,0 +1,7 @@
+graphql:
+  packages:
+    - "com.example"
+
+spring:
+  application:
+    name: graphql-kotlin-demo

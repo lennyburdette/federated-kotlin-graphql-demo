@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd $(dirname $(dirname $0))
+./bin/build-all
+docker-compose build
+exec docker-compose up

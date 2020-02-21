@@ -10,17 +10,17 @@ import java.time.OffsetDateTime
 @KeyDirective(FieldSet("id"))
 data class Payment(
   @GraphQLID val id: String,
-  val createdAt: OffsetDateTime,
-  val updatedAt: OffsetDateTime,
+  val createdAt: OffsetDateTime = OffsetDateTime.now(),
+  val updatedAt: OffsetDateTime = OffsetDateTime.now(),
   val amountMoney: Money,
-  val tipMoney: Money,
-  val totalMoney: Money,
-  val appFeeMoney: Money,
-  val processingFee: List<ProcessingFee>,
+  val tipMoney: Money = Money(0, "USD"),
+  val totalMoney: Money = Money(0, "USD"),
+  val appFeeMoney: Money = Money(0, "USD"),
+  val processingFee: List<ProcessingFee> = listOf(),
   val refundedMoney: Money? = null,
-  val status: String, // APPROVED, COMPLETED, CANCELED, or FAILED
-  val sourceType: String, // CARD
-  val cardDetails: CardPaymentDetails,
+  val status: String = "APPROVED", // APPROVED, COMPLETED, CANCELED, or FAILED
+  val sourceType: String = "CARD", // CARD
+  val cardDetails: CardPaymentDetails? = null,
   val referenceId: String? = null,
   val buyerEmailAddress: String? = null,
   val billingAddress: Address? = null,
@@ -37,3 +37,7 @@ data class Payment(
   fun employee() = Employee(employeeId)
   fun location() = Location(locationId)
 }
+
+data class PaymentPaginated(
+  val nodes: List<Payment>
+)
