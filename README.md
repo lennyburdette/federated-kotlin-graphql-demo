@@ -1,5 +1,14 @@
 # GraphQL/Kotlin/Federation/React demo
 
+This repository contains:
+
+* A federated GraphQL API, made up of:
+    * A Node.js Apollo Server as the Gateway.
+    * Three graphql-kotlin services.
+    * A docker-compose config for running all four services together.
+* A nearly-empty graphql-kotlin demo app.
+* A React app for demonstrating code generation and querying.
+
 <details>
   <summary>Requirements</summary>
 
@@ -25,7 +34,7 @@ Open [localhost:8081/playground](http://localhost:8081/playground), [localhost:8
 <details>
   <summary>Exploring graphql-kotlin</summary>
 
-* [Read the official docs](https://expediagroup.github.io/graphql-kotlin/docs/getting-started.html)
+* [Read the official docs](gk)
 * Edit `graphql-kotlin-demo/src/main/kotlin/com/example/Application.kt`.
 * Run the app:
     ```sh
@@ -62,3 +71,32 @@ Pushing new service definitions to AGM requires an API key for the `square-lunch
 
 Visit [go/graphql-login](https://go/graphql-login) to view service definitions, graph usage, error rates, and latency metrics.
 </details>
+
+<details>
+  <summary>Resources</summary>
+
+### Services
+* [graphql-kotlin][gk]
+* [graphql-java][gj]
+* [graphql-java-extended-scalars][gjes]
+* [federation-jvm][fj]
+* [howtographql.com][htg]
+* [Apollo Graph Manager][agm]
+
+### Client
+* [create-react-app][cra]
+* [apollo-boost][ab]
+* [@apollo/react-hooks][arh]
+* [apollo codegen][ac]
+</details>
+
+[gk]:https://expediagroup.github.io/graphql-kotlin/docs/getting-started.html
+[gj]:https://www.graphql-java.com
+[gjes]:https://github.com/graphql-java/graphql-java-extended-scalars
+[fj]:https://github.com/apollographql/federation-jvm
+[htg]:https://www.howtographql.com
+[agm]:https://www.apollographql.com/docs/graph-manager/
+[cra]:https://create-react-app.dev
+[ab]:https://www.apollographql.com/docs/react/
+[arh]:https://www.apollographql.com/docs/react/api/react-hooks/
+[ac]:https://github.com/apollographql/apollo-tooling#code-generation
