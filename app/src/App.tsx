@@ -1,7 +1,6 @@
 import React from 'react';
 import ApolloClient, { gql } from 'apollo-boost';
 import { ApolloProvider, useQuery } from '@apollo/react-hooks';
-import { AppTest, AppTestVariables } from './__generated__/AppTest';
 
 const client = new ApolloClient({
   uri: 'https://young-plains-37812.herokuapp.com/graphql',
