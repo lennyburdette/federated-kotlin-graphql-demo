@@ -10,9 +10,12 @@
 export interface AppTest_merchant {
   __typename: "Merchant";
   id: string;
-  businessName: string | null;
 }
 
 export interface AppTest {
-  merchant: AppTest_merchant;
+  merchant: AppTest_merchant | null;
+}
+
+export interface AppTestVariables {
+  id: string;
 }
