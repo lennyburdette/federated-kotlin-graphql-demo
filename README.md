@@ -1,5 +1,8 @@
 # GraphQL/Kotlin/Federation/React demo
 
+* This repo: [**go/graphql-lnl-2020-code**](https://go/graphql-lnl-2020-code)
+* Live API: [**go/graphql-lnl-2020**](https://go/graphql-lnl-2020)
+
 This repository contains:
 
 * A federated GraphQL API, made up of:
