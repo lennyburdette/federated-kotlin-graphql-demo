@@ -9,6 +9,8 @@ This repository contains:
 * A nearly-empty graphql-kotlin demo app.
 * A React app for demonstrating code generation and querying.
 
+***
+
 <details>
   <summary>Requirements</summary>
 
@@ -38,7 +40,7 @@ Open [localhost:8081/playground](http://localhost:8081/playground), [localhost:8
 * Edit `graphql-kotlin-demo/src/main/kotlin/com/example/Application.kt`.
 * Run the app:
     ```sh
-    ./gradlew :graphql-kotlin-demo:bootRun
+    ./bin/run-demo
     ```
     (Or import the entire project in Intellij and use the "Run" button.)
 </details>
