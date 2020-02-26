@@ -39,5 +39,6 @@ data class Payment(
 }
 
 data class PaymentPaginated(
-  val nodes: List<Payment>
+  val nodes: List<Payment>,
+  val cursor: String? = null
 )
