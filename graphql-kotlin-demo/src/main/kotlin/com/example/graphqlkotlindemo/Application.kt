@@ -3,6 +3,8 @@ package com.example.graphqlkotlindemo
 import com.expediagroup.graphql.annotations.*
 import com.expediagroup.graphql.spring.execution.*
 import com.expediagroup.graphql.spring.operations.*
+import graphql.GraphqlErrorBuilder
+import graphql.execution.DataFetcherResult
 import graphql.schema.DataFetchingEnvironment
 import kotlinx.coroutines.*
 import kotlinx.coroutines.future.*

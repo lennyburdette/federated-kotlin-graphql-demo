@@ -204,6 +204,18 @@ suspend fun bestFriend(env: DataFetchingEnvironment): Human? {
 }
 ```
 
+## Partial Data
+
+```kotlin
+// Inside `class MyQuery`
+fun greet(name: String?, env: DataFetchingEnvironment): DataFetchingResult<String> {
+  return DataFetcherResult.newResult<String>()
+    .data("hello $name")
+    .error(GraphqlErrorBuilder.newError(env).message("Whoops").build())
+    .build()
+}
+```
+
 ## Next Steps
 
 Explore the other apps in this repo to see:
