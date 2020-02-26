@@ -68,6 +68,14 @@ fun greet(name: String?) = "hello $name"
 
 graphql-kotlin does not support default values [yet](https://github.com/ExpediaGroup/graphql-kotlin/issues/53).
 
+## Descriptions
+
+```kotlin
+// Inside `class MyQuery`
+@GraphQLDescription("it says hello")
+fun greet(name: String?) = "hello $name"
+```
+
 ## Nullability
 
 ```kotlin
