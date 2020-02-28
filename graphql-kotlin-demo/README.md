@@ -19,6 +19,7 @@ Then navigate to http://localhost:8080/playground.
 * Excellent concurrency support, both with Java futures and Kotlin coroutines.
 * The [graphql-kotlin](https://expediagroup.github.io/graphql-kotlin/docs/getting-started.html) and [graphql-java](https://www.graphql-java.com/) are excellent.
 * It's more expressive than Java, so hopefully all the Rubyists at Square will like it better.
+* Allows us to take advantage of Service Container.
 
 ## The Tiniest GraphQL Service
 

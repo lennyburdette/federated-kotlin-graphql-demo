@@ -6,11 +6,16 @@
 This repository contains:
 
 * A federated GraphQL API, made up of:
-    * A Node.js Apollo Server as the Gateway.
-    * Three graphql-kotlin services.
-    * A docker-compose config for running all four services together.
-* A nearly-empty graphql-kotlin demo app.
-* A React app for demonstrating code generation and querying.
+    * A [Node.js Apollo Server](https://github.com/lennyburdette/federated-kotlin-graphql-demo/tree/master/gateway) as the Gateway.
+    * Three graphql-kotlin services ([1](https://github.com/lennyburdette/federated-kotlin-graphql-demo/tree/master/customers-graph), [2](https://github.com/lennyburdette/federated-kotlin-graphql-demo/tree/master/identities-graph), [3](https://github.com/lennyburdette/federated-kotlin-graphql-demo/tree/master/payments-graph)).
+    * A [docker-compose config](https://github.com/lennyburdette/federated-kotlin-graphql-demo/blob/master/docker-compose.yml) for running all four services together.
+* A nearly-empty [graphql-kotlin demo app](https://github.com/lennyburdette/federated-kotlin-graphql-demo/tree/master/graphql-kotlin-demo).
+* A [React app](https://github.com/lennyburdette/federated-kotlin-graphql-demo/tree/master/app) for demonstrating code generation and querying.
+
+### Tutorials
+
+* [Using GraphQL](https://github.com/lennyburdette/federated-kotlin-graphql-demo/blob/master/app/README.md)
+* [Writing a GraphQL Service](https://github.com/lennyburdette/federated-kotlin-graphql-demo/blob/master/graphql-kotlin-demo/README.md)
 
 ***
 
@@ -40,12 +45,7 @@ Open [localhost:8081/playground](http://localhost:8081/playground), [localhost:8
   <summary>Exploring graphql-kotlin</summary>
 
 * [Read the official docs](gk)
-* Edit `graphql-kotlin-demo/src/main/kotlin/com/example/Application.kt`.
-* Run the app:
-    ```sh
-    ./bin/run-demo
-    ```
-    (Or import the entire project in Intellij and use the "Run" button.)
+* [Follow the tutorial](https://github.com/lennyburdette/federated-kotlin-graphql-demo/blob/master/graphql-kotlin-demo/README.md)
 </details>
 
 <details>
