@@ -81,7 +81,7 @@ fun greet(name: String?) = "hello $name"
 
 ```kotlin
 // Inside `class MyQuery`
-fun maybeInt() = listOf(1, 2, 3, null).shuffled().first()
+fun maybeInt() = listOf(1, 2, 3, null).random()
 ```
 
 ## Lists
