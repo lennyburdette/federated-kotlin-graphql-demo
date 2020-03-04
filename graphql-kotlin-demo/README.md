@@ -104,6 +104,15 @@ data class Human(
 fun human() = Human(UUID.randomUUID().toString(), "Alice")
 ```
 
+```graphql
+{
+  human {
+    id
+    name
+  }
+}
+```
+
 ## Concurrency
 
 ```kotlin
@@ -114,8 +123,30 @@ val HUMAN_DB = mapOf(
     "4" to Human("4", "David")
 )
 
+fun getHuman(id: String): Human? {
+  println("Fetching human id: $id")
+  Thread.sleep(1000)
+  return HUMAN_DB[id]
+}
+```
+
+```graphql
+{
+  one: human(id: "1") {
+    id
+    name
+  }
+  two: human(id: "2") {
+    id
+    name
+  }
+}
+```
+
+```kotlin
 suspend fun getHuman(id: String): Human? {
-  delay(100)
+  println("Fetching human id: $id")
+  delay(1000)
   return HUMAN_DB[id]
 }
 
@@ -166,7 +197,7 @@ val FRIENDS = mapOf(
 suspend fun friends() = FRIENDS[id]?.map { getHuman(it) }
 
 suspend fun getHuman(id: String): Human? {
-  println("FETCH $id") // New
+  println("Fetching human id: $id")
   delay(100)
   return HUMAN_DB[id]
 }
