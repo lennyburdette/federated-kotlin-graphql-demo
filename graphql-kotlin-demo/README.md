@@ -240,7 +240,7 @@ suspend fun bestFriend(env: DataFetchingEnvironment): Human? {
 
 ```kotlin
 // Inside `class MyQuery`
-fun greet(name: String?, env: DataFetchingEnvironment): DataFetchingResult<String> {
+fun greet(name: String?, env: DataFetchingEnvironment): DataFetcherResult<String> {
   return DataFetcherResult.newResult<String>()
     .data("hello $name")
     .error(GraphqlErrorBuilder.newError(env).message("Whoops").build())
